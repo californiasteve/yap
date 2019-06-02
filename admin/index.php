@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_URI'] == "/admin") {
     header('Location: /admin/', null, 301);
 };
 ?>
+<div class="admin-title"><h2><?php echo $title ?></h2></div>
 <div id="signin" class="container">
     <form class="form-signin" method="POST" action="auth_login.php">
-        <h2 class="form-signin-heading">Yap</h2>
         <div id="no-auth-message">
             <?php echo isset($_REQUEST['auth']) ? $GLOBALS['not_authorized'] : "" ?>
             <?php echo isset($_REQUEST['expired']) ? $GLOBALS['session_expired'] : "" ?>
@@ -30,3 +30,4 @@ if ($_SERVER['REQUEST_URI'] == "/admin") {
 </div>
 <?php
 require_once 'footer.php';
+
